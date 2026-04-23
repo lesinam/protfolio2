@@ -62,4 +62,27 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    // スクロールフェードイン
+    const faders = document.querySelectorAll('.section-padding');
+
+    const appearOptions = {
+        threshold: 0.1, // 要素が10%見えたら発火
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.classList.add('appear');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+        fader.classList.add('fade-in'); // 初期状態でクラスを付与
+        appearOnScroll.observe(fader);
+    });
 });
