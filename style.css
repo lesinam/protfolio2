@@ -1,3 +1,4 @@
+
 /* --- 1. 一般設定と変数 --- */
 :root {
     --primary-color: #17a2b8; /* サイバーブルー */
@@ -33,6 +34,9 @@ body {
     background-color: var(--bg-color);
     transition: background-color 0.4s, color 0.4s; 
     padding-top: 80px; 
+    letter-spacing: 0.03em; /* 文字と文字の間に少しゆとりを持たせる */
+    word-break: break-all; /* 日本語の改行を自然にする */
+    
 }
 
 a {
@@ -50,14 +54,27 @@ a:hover {
     margin: 0 auto;
     padding: 0 20px;
 }
+body.dark-mode .certmaster-table tbody tr:hover {
+    background-color: rgba(23, 162, 184, 0.15); /* ライトモードより少し濃くして目立たせる */
+}
+
+body.dark-mode .lab-summary {
+    background-color: rgba(23, 162, 184, 0.15);
+}
 
 /* --- 2. ヘッダーとナビゲーション --- */
 .hero-section {
     background: var(--bg-color);
     padding-bottom: 30px;
     text-align: center;
+    background: linear-gradient(135deg, var(--bg-color) 70%, rgba(23, 162, 184, 0.05) 100%);
 }
-
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* ボタン間の隙間を均等にする */
+    flex-wrap: wrap; /* スマホで画面が狭い場合は縦並びになるよう配慮 */
+}
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -73,7 +90,7 @@ a:hover {
     transition: background-color 0.4s;
     padding-left: 5%;
     padding-right: 5%;
-    height: 80px; /* Cố định chiều cao navbar */
+    height: 80px;
 }
 
 .dark-mode .navbar {
@@ -284,6 +301,7 @@ body.dark-mode .bg-light {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
+    align-items: stretch;
 }
 
 .skill-item {
@@ -294,8 +312,17 @@ body.dark-mode .bg-light {
     text-align: center;
     border: 1px solid transparent; 
     transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
-
+.skill-item p {
+    margin-top: auto; /* 追加: 説明文が短い場合でもバランスを保つ */
+}
+.skill-item:hover .skill-icon {
+    transform: scale(1.2) rotate(5deg);
+    transition: transform 0.3s ease;
+}
 body.dark-mode .skill-item {
     background-color: #383838;
 }
@@ -367,79 +394,171 @@ body.dark-mode .skill-item {
     transition: transform 0.3s;
 }
 
-
-/* --- 6. 更新中カード (Updating Card) --- */
-.updating-card {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 50px 30px;
-    border-radius: 15px;
+/* --- 6. ラボ・研究実績 (Portfolio Summary & Tables) --- */
+.portfolio-summary {
     text-align: center;
-    background-color: var(--card-bg);
-    box-shadow: var(--shadow-light);
-    border: 2px dashed var(--primary-color);
-    transition: all 0.4s;
+    margin-bottom: 50px;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.updating-icon {
-    display: inline-block;
-    margin-bottom: 20px;
-    animation: gentle-pulse 2s infinite ease-in-out;
+.portfolio-summary p {
+    font-size: 1.05rem;
+    margin-bottom: 25px;
 }
 
-.updating-icon i {
-    font-size: 4.5rem; 
-    color: var(--primary-color);
-}
-
-@keyframes gentle-pulse {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.1); opacity: 0.8; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-.updating-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: var(--text-color);
-}
-
-.updating-main-text {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-}
-
-.current-focus-list {
-    text-align: left;
-    display: inline-block;
-    background-color: var(--bg-color);
-    padding: 20px 30px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-}
-.dark-mode .current-focus-list {
-    background-color: #383838;
-}
-
-.focus-item {
-    margin-bottom: 10px;
-    font-size: 1rem;
+.tech-tags {
     display: flex;
-    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-.focus-item i {
-    color: var(--accent-color);
-    margin-right: 10px;
-    font-size: 1.2rem;
-}
-
-.updating-sub-text {
+.tech-tag {
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 6px 20px;
+    border-radius: 30px;
     font-size: 0.95rem;
-    color: var(--secondary-color);
-    font-style: italic;
+    font-weight: 600;
+    background-color: transparent;
+}
+/* 進捗バーのベース */
+.progress-bar-container {
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.2);
+    border-radius: 4px;
+    height: 8px;
+    margin-top: 5px;
+    overflow: hidden;
 }
 
+/* 100%のバー */
+.progress-bar-fill-100 {
+    height: 100%;
+    background-color: var(--accent-color); /* 緑色 */
+    width: 100%;
+}
+
+/* 進行中のバー */
+.progress-bar-fill-other {
+    height: 100%;
+    background-color: var(--primary-color); /* 青色 */
+}
+
+/* 横並びレイアウト用のコンテナ */
+.certmaster-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.certmaster-card {
+    flex: 1;
+    min-width: 0; /* 子要素（テーブル等）が親の幅を押し広げるのを防ぐ */
+    background-color: var(--card-bg);
+    padding: 30px 25px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-light);
+    border: 1px solid transparent;
+}
+
+/* Accordion (Details/Summary) Styles */
+.lab-details {
+    width: 100%;
+}
+
+.lab-summary {
+    cursor: pointer;
+    padding: 12px 20px;
+    background-color: rgba(23, 162, 184, 0.08);
+    color: var(--primary-color);
+    border-radius: 8px;
+    font-weight: 600;
+    list-style: none; /* Hide default arrow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s, transform 0.2s;
+    user-select: none;
+}
+
+.lab-summary::-webkit-details-marker {
+    display: none; /* Hide default arrow in Safari */
+}
+
+.lab-summary:hover {
+    background-color: rgba(23, 162, 184, 0.15);
+}
+
+.lab-summary i {
+    transition: transform 0.3s ease;
+}
+
+/* Rotate icon when open */
+.lab-details[open] .lab-summary i {
+    transform: rotate(180deg);
+}
+
+/* Table Styles */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.certmaster-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    min-width: 500px;
+}
+
+.certmaster-table th {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 2px solid var(--primary-color);
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.certmaster-table td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.certmaster-table tbody tr {
+    transition: background-color 0.2s;
+}
+
+.certmaster-table tbody tr:hover {
+    background-color: rgba(23, 162, 184, 0.08);
+}
+
+.progress-100 { 
+    color: var(--accent-color); 
+    font-weight: 700; 
+}
+
+.progress-other { 
+    color: var(--primary-color); 
+    font-weight: 700; 
+}
+
+.lab-type-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 0.8em;
+    font-weight: 600;
+    background-color: rgba(23, 162, 184, 0.1);
+    color: var(--primary-color);
+    white-space: nowrap;
+}
 
 /* --- 7. 目標 (Goals) --- */
 .goal-list {
@@ -477,6 +596,17 @@ body.dark-mode .goal-item {
 .contact-btn:hover { border-color: var(--primary-color); color: var(--primary-color); }
 
 /* --- 9. モバイル対応 (Mobile Responsive) --- */
+@media (max-width: 992px) {
+    /* タブレット・スマホ幅では横並びを解除して縦並びにする */
+    .certmaster-container {
+        flex-direction: column;
+    }
+    
+    .certmaster-card {
+        width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
     /* Navbar Styles */
     .navbar {
@@ -488,7 +618,7 @@ body.dark-mode .goal-item {
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 80px; /* Header Height */
+        top: 80px; 
         left: 0;
         background-color: var(--card-bg);
         border-bottom: 1px solid rgba(0,0,0,0.1);
@@ -537,9 +667,9 @@ body.dark-mode .goal-item {
         height: 150px;
     }
 
-    /* FIX: Philosophy Section Mobile Layout (Sửa lỗi trong ảnh) */
+    /* Philosophy Section Mobile Layout */
     .comparison-container {
-        flex-direction: column; /* Xếp dọc các thẻ */
+        flex-direction: column; 
     }
 
     .comparison-card {
@@ -548,7 +678,7 @@ body.dark-mode .goal-item {
     }
 
     .transfer-icon {
-        transform: rotate(90deg); /* Xoay mũi tên xuống dưới */
+        transform: rotate(90deg); 
         margin: 15px 0;
     }
 
@@ -556,9 +686,15 @@ body.dark-mode .goal-item {
     .section-padding h2 {
         font-size: 2rem;
     }
-    
-    .current-focus-list {
-        padding: 15px;
-        width: 100%;
-    }
+} 
+/*スクロール時の「フワッと」表示（フェードイン）*/
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
 }
