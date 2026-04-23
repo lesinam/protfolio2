@@ -24,7 +24,7 @@
                     <span class="logo-text">LE SI NAM</span>
                 </a>
             </div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#about">自己紹介</a></li>
                 <li><a href="#skills">スキル</a></li>
                 <li><a href="#philosophy">強み・思考法</a></li>
@@ -33,7 +33,7 @@
                 <li><a href="#contact">お問い合わせ</a></li>
                 <li><button id="dark-mode-toggle" class="dark-mode-btn"><i class="fas fa-moon"></i></button></li>
             </ul>
-            <div class="burger-menu">
+            <div class="burger-menu" id="burger-menu">
                 <i class="fas fa-bars"></i>
             </div>
         </nav>
@@ -49,19 +49,14 @@
     </header>
 
     <main>
-        
         <section id="about" class="section-padding">
             <div class="container">
                 <h2>自己紹介</h2>
                 <div class="about-content">
-                    <p>初めまして、<strong>LE SI NAM（レ・シ・ナム）</strong>と申します。私は日本で7年以上にわたり、建設コンサルタント業界で<strong>設計課長補佐</strong>として従事し、チームマネジメントや複雑な構造計算を担当してまいりました。</p>
-                    
+                    <p>初めまして、<strong>LE SI NAM（レ・シ・ナム）</strong>と申します。私は日本で10年以上にわたり、建設コンサルタント業界で<strong>設計課長補佐</strong>として従事し、チームマネジメントや複雑な構造計算を担当してまいりました。</p>
                     <p>現在、私はそのキャリアを<strong>サイバーセキュリティ</strong>という新たな領域へと転換させています。構造エンジニアとして培った論理的思考は、そのままセキュリティ分野にも応用できると確信しています。</p>
-                    
                     <p><em>「橋の崩壊を防ぐための荷重計算」から、「システムのダウンを防ぐためのリスク分析」へ。</em></p>
-
                     <p>この目標に向け、2024年末からの1年足らずで<strong>IT関連の資格を多数取得</strong>（CompTIA, IBM, Google, IPA等）しました。持ち前の「学習速度」と「粘り強さ」で、貴社のセキュリティ対策に貢献いたします。</p>
-                    
                     <p style="margin-top: 15px;">
                         <a href="https://drive.google.com/file/d/1rfbwYzjmEO28fzM_cfNvpgZsFOEURg2e/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn secondary-btn resume-btn">
                             <i class="fas fa-file-pdf"></i> 職務経歴書 (PDF)
@@ -197,33 +192,178 @@
             <div class="container">
                 <h2>実務ラボ・研究ポートフォリオ</h2>
                 
-                <div class="updating-card">
-                    <div class="updating-icon">
-                        <i class="fas fa-laptop-code"></i>
+                <div class="portfolio-summary">
+                    <p>実稼働環境を想定し、攻撃検知からフォレンジックまで体系的に習得しています。</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Kali Linux</span>
+                        <span class="tech-tag">Windows Server</span>
+                        <span class="tech-tag">Wireshark</span>
                     </div>
-                    <h3>現在、実践・研究中です</h3>
-                    <p class="updating-main-text">
-                        GoogleおよびIBMの認定プログラムで得た知識をベースに、ホームラボ環境にて以下のテーマを実践しています。
-                    </p>
-                    
-                    <div class="current-focus-list">
-                        <div class="focus-item"><i class="fas fa-check-circle"></i> 仮想環境での攻撃・防御演習 (Kali Linux)</div>
-                        <div class="focus-item"><i class="fas fa-check-circle"></i> Web脆弱性 (XSS, SQL) の再現と修正コードの作成</div>
-                        <div class="focus-item"><i class="fas fa-check-circle"></i> Pythonによるログ解析の自動化スクリプト作成</div>
-                        <div class="focus-item"><i class="fas fa-check-circle"></i> SIEM (Chronicle/Splunk) を用いた脅威検知シミュレーション</div>
-                        <div class="focus-item"><i class="fas fa-check-circle"></i> 仮想環境でのインシデントレスポンス演習</div>
-                    </div>
-
-                    <p class="updating-sub-text">
-                        近日中に詳細なレポートを公開予定です。<br>
-                        私の学習姿勢や将来の目標については、引き続き下記をご覧ください。
-                    </p>
-                    
-                    <a href="#goals" class="btn secondary-btn" style="margin-top: 20px;">
-                        <i class="fas fa-bullseye"></i> 今後の目標を見る
-                    </a>
                 </div>
 
+                <div class="certmaster-container">
+                    
+                    <div class="certmaster-card">
+                        <h3 style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 1.2rem;">
+                            <i class="fas fa-shield-virus" style="color: #17A2B8;"></i>
+                            CertMaster Labs for CySA+ 
+                            <span style="font-size: 0.7em; background-color: #17A2B8; color: white; padding: 3px 10px; border-radius: 12px; margin-left: auto;">実践的な演習中</span>
+                        </h3>
+                        <p style="margin-bottom: 20px; font-size: 0.9em; opacity: 0.8; line-height: 1.6;">高度な脅威分析、脆弱性スキャン、インシデント後のフォレンジックなど、より専門的なセキュリティアナリストのスキル強化に取り組んでいます。</p>
+                        
+                        <details class="lab-details">
+                            <summary class="lab-summary">全33項目のラボ一覧を展開 <i class="fas fa-chevron-down"></i></summary>
+                            <div class="table-responsive">
+                                <table class="certmaster-table">
+                                    <thead>
+                                        <tr>
+                                            <th>ラボ種別</th>
+                                            <th>ラボ内容</th>
+                                            <th>進捗</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>制御機能を構成する</td>
+                                            <td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>IoCと脅威インテリジェンスの情報源を確認する</td>
+                                            <td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>脅威ハンティングを実行する</td>
+                                            <td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>一元管理型ロギングを構成する</td>
+                                            <td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge" style="background-color: rgba(40, 167, 69, 0.1); color: #28a745;">応用</span></td><td>システム強化を行う</td>
+                                            <td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>時刻同期エラーを評価する</td>
+                                            <td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>自動化を構成する</td>
+                                            <td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>アセットディスカバリーを行う</td>
+                                            <td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>脆弱性スキャンを実行する</td>
+                                            <td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>パッシブスキャンを実行する</td>
+                                            <td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>コンテキスト認識を確立する</td>
+                                            <td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>脆弱性レポートを分析する</td>
+                                            <td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>レガシーシステムを検知する</td>
+                                            <td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge" style="background-color: rgba(40, 167, 69, 0.1); color: #28a745;">応用</span></td><td>インシデント後のフォレンジック分析を実行する</td>
+                                            <td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        
+                                        <tr><td><span class="lab-type-badge" style="background-color: rgba(40, 167, 69, 0.1); color: #28a745;">応用</span></td><td>IoCの検出と分析を実行する</td>
+                                            <td class="progress-other">90% <i class="fas fa-tools"></i><div class="progress-bar-container"><div class="progress-bar-fill-other" style="width: 90%;"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge" style="background-color: rgba(255, 193, 7, 0.1); color: #ffc107;">適応</span></td><td>プレイブックインシデント対応を実施する</td>
+                                            <td class="progress-other">18% <i class="fas fa-tools"></i><div class="progress-bar-container"><div class="progress-bar-fill-other" style="width: 18%;"></div></div></td></tr>
+                                        
+                                        <tr><td><span class="lab-type-badge" style="background-color: rgba(40, 167, 69, 0.1); color: #28a745;">応用</span></td><td>フォレンジックエビデンスを収集する</td>
+                                            <td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>根本原因の分析を実施する</td>
+                                            <td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge" style="background-color: rgba(40, 167, 69, 0.1); color: #28a745;">応用</span></td><td>ネットワークスニファを使用する</td>
+                                            <td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        
+                                        <tr><td><span class="lab-type-badge" style="background-color: rgba(40, 167, 69, 0.1); color: #28a745;">応用</span></td><td>DNSとIP評判を調査する</td>
+                                            <td class="progress-other">演習中 <i class="fas fa-tools"></i><div class="progress-bar-container"><div class="progress-bar-fill-other" style="width: 10%; opacity: 0.4;"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>ファイル分析手法を使用する</td>
+                                            <td class="progress-other">演習中 <i class="fas fa-tools"></i><div class="progress-bar-container"><div class="progress-bar-fill-other" style="width: 10%; opacity: 0.4;"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>悪意のある可能性のあるファイルを分析する</td>
+                                            <td class="progress-other">演習中 <i class="fas fa-tools"></i><div class="progress-bar-container"><div class="progress-bar-fill-other" style="width: 10%; opacity: 0.4;"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>従来型以外の脆弱性スキャンツールを使用する</td>
+                                            <td class="progress-other">演習中 <i class="fas fa-tools"></i><div class="progress-bar-container"><div class="progress-bar-fill-other" style="width: 10%; opacity: 0.4;"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge" style="background-color: rgba(40, 167, 69, 0.1); color: #28a745;">応用</span></td><td>Web脆弱性スキャンを実行する</td>
+                                            <td class="progress-other">演習中 <i class="fas fa-tools"></i><div class="progress-bar-container"><div class="progress-bar-fill-other" style="width: 10%; opacity: 0.4;"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>クラウドの脆弱性を分析する</td>
+                                            <td class="progress-other">演習中 <i class="fas fa-tools"></i><div class="progress-bar-container"><div class="progress-bar-fill-other" style="width: 10%; opacity: 0.4;"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>弱い暗号をエクスプロイトする</td>
+                                            <td class="progress-other">演習中 <i class="fas fa-tools"></i><div class="progress-bar-container"><div class="progress-bar-fill-other" style="width: 10%; opacity: 0.4;"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>ディレクトリトラバーサルとコマンドインジェクションを実行・検出する</td>
+                                            <td class="progress-other">演習中 <i class="fas fa-tools"></i><div class="progress-bar-container"><div class="progress-bar-fill-other" style="width: 10%; opacity: 0.4;"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>特権エスカレーションを実行し検出する</td>
+                                            <td class="progress-other">演習中 <i class="fas fa-tools"></i><div class="progress-bar-container"><div class="progress-bar-fill-other" style="width: 10%; opacity: 0.4;"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>XSSを実行し検出する</td>
+                                            <td class="progress-other">演習中 <i class="fas fa-tools"></i><div class="progress-bar-container"><div class="progress-bar-fill-other" style="width: 10%; opacity: 0.4;"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>LFI RFIを実行し検出する</td>
+                                            <td class="progress-other">演習中 <i class="fas fa-tools"></i><div class="progress-bar-container"><div class="progress-bar-fill-other" style="width: 10%; opacity: 0.4;"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>SQLiを実行し検出する</td>
+                                            <td class="progress-other">演習中 <i class="fas fa-tools"></i><div class="progress-bar-container"><div class="progress-bar-fill-other" style="width: 10%; opacity: 0.4;"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>CSRFを実行し検出する</td>
+                                            <td class="progress-other">演習中 <i class="fas fa-tools"></i><div class="progress-bar-container"><div class="progress-bar-fill-other" style="width: 10%; opacity: 0.4;"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge" style="background-color: rgba(40, 167, 69, 0.1); color: #28a745;">応用</span></td><td>セキュリティ設定の誤りの検出と悪用</td>
+                                            <td class="progress-other">演習中 <i class="fas fa-tools"></i><div class="progress-bar-container"><div class="progress-bar-fill-other" style="width: 10%; opacity: 0.4;"></div></div></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="certmaster-card">
+                        <h3 style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 1.2rem;">
+                            <i class="fas fa-server" style="color: #17A2B8;"></i>
+                            CertMaster Labs for Security+ 
+                            <span style="font-size: 0.7em; background-color: #28a745; color: white; padding: 3px 10px; border-radius: 12px; margin-left: auto;">完了実績</span>
+                        </h3>
+                        <p style="margin-bottom: 20px; font-size: 0.9em; opacity: 0.8; line-height: 1.6;">システム構成のギャップ分析から侵入テストの実行まで、広範にわたるハンズオンラボを完了し、基礎的なセキュリティ運用スキルを習得しています。</p>
+                        
+                        <details class="lab-details">
+                            <summary class="lab-summary">全36項目のラボ一覧を展開 <i class="fas fa-chevron-down"></i></summary>
+                            <div class="table-responsive">
+                                <table class="certmaster-table">
+                                    <thead>
+                                        <tr>
+                                            <th>ラボ種別</th>
+                                            <th>ラボ内容</th>
+                                            <th>進捗</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>システム構成のギャップ分析を実行する</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>セキュリティ制御タイプの構成例</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>オープンサービスポートの検索</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>SETを使ってソーシャルエンジニアリングを実行する</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge" style="background-color: rgba(40, 167, 69, 0.1); color: #28a745;">応用</span></td><td>ストレージ暗号化を使う</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>ハッシュとソルティングを使う</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>パスワードセキュリティの管理</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>パーミッションの管理</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>リモートアクセスの設定</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>IPSecトンネリングを使う</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>コンテナーを使う</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>仮想化を使う</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge" style="background-color: rgba(40, 167, 69, 0.1); color: #28a745;">応用</span></td><td>バックアップの実装</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>ドライブのサニタイズの実行</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>SQLiの悪用と検出</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>脅威のフィードを使った作業</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>脆弱性スキャンの実行</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>セキュリティベースラインの理解</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge" style="background-color: rgba(40, 167, 69, 0.1); color: #28a745;">応用</span></td><td>ファイアウォールの実装</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>グループポリシーを使う</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge" style="background-color: rgba(40, 167, 69, 0.1); color: #28a745;">応用</span></td><td>セキュリティ強化</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>DNSフィルタリングの実行</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>システム監視の構成</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge" style="background-color: rgba(40, 167, 69, 0.1); color: #28a745;">応用</span></td><td>インシデント対応：検出</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge" style="background-color: rgba(40, 167, 69, 0.1); color: #28a745;">応用</span></td><td>デジタルフォレンジックの実行</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>根本原因の分析を実行する</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>マルウェアの検出と対応</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>オンパス攻撃の理解</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        
+                                        <tr><td><span class="lab-type-badge" style="background-color: rgba(255, 193, 7, 0.1); color: #ffc107;">適応</span></td><td>プレイブックを使う</td>
+                                            <td class="progress-other">80% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-other" style="width: 80%;"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>許可リストと拒否リストの実装</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>偵察の実行</td>
+                                            <td class="progress-other">92% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-other" style="width: 92%;"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>侵入テストの実行</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>シミュレーションによるトレーニングと意識向上</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge">サポート</span></td><td>自動化とスクリプティングの使用例</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge" style="background-color: rgba(40, 167, 69, 0.1); color: #28a745;">応用</span></td><td>ネットワークスニファを使用する</td><td class="progress-100">100% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-100"></div></div></td></tr>
+                                        <tr><td><span class="lab-type-badge" style="background-color: rgba(220, 53, 69, 0.1); color: #dc3545;">チャレンジ</span></td><td>ネットワークインシデントの調査と修復</td>
+                                            <td class="progress-other">96% <i class="fas fa-check"></i><div class="progress-bar-container"><div class="progress-bar-fill-other" style="width: 96%;"></div></div></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </details>
+                    </div>
+                </div> 
             </div>
         </section>
 
